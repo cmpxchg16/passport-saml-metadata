@@ -20,6 +20,9 @@ describe('MetadataReader', () => {
       config = new MetadataReader(metadata);
     });
 
+    it('entityID', () => {
+      assert.strictEqual(config.entityID, 'http://adfs.server.url/adfs/services/trust');
+    });
     it('identityProviderUrl', () => {
       assert.strictEqual(config.identityProviderUrl, 'https://adfs.server.url/adfs/ls/Redirect');
     });

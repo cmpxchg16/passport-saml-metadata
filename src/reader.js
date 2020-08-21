@@ -35,6 +35,18 @@ class MetadataReader {
     };
   }
 
+  get entityID() {
+    try {
+      return this.query('//md:EntityDescriptor/@entityID/')[0].nodeValue;
+    } catch (e) {
+      if (this.options.throwExceptions) {
+        throw e;
+      } else {
+        return undefined;
+      }
+    }
+  }
+
   get identifierFormat() {
     try {
       return this.query('//md:IDPSSODescriptor/md:NameIDFormat/text()')[0].nodeValue;
