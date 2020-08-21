@@ -37,7 +37,7 @@ class MetadataReader {
 
   get entityID() {
     try {
-      return this.query('//md:EntityDescriptor/@entityID/')[0].nodeValue;
+      return this.query('//md:EntityDescriptor/@entityID')[0].nodeValue;
     } catch (e) {
       if (this.options.throwExceptions) {
         throw e;
